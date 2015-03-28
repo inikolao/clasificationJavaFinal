@@ -18,6 +18,6 @@ echo $localIP
 #	echo "port $portSt is available"
 # fi
 source /root/local/share/jubatus/jubatus.profile
-jubaclassifier --configpath clasfy.json --rpc-port 9230&
+jubaclassifier --configpath clasfy.json --timeout 0 --rpc-port 9230&
 cd target
 java -Xms1G -Xmx8G -jar clasy-0.1.jar

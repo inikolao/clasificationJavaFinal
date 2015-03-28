@@ -60,6 +60,7 @@ public class util {
             elemval=line.split(",");
             System.out.println("Label: "+elemval[0]+" - Value: "+elemval[1]+"");
             trainData.add(makeTrainDatum(elemval[0],"value", Double.parseDouble(elemval[1])));
+            //client.getLabels();
             System.out.println("");
         }
         System.out.println("Sending Datum....");
@@ -117,7 +118,12 @@ public class util {
     {
         List<List<EstimateResult>> results;
         ClassifierClient cl;
-        cl=openClient(util.clsf);
+        int port=9230;
+        String name="clasy";
+        int timeout=10;
+        String host="192.168.2.5";
+        client myclient= new client(host,port,name,timeout);
+        cl=openClient(myclient);
         Datum[] testData = {
         makeDatum("value", value)};
         results = cl.classify(Arrays.asList(testData));

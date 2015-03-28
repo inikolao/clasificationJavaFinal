@@ -37,7 +37,7 @@ public static void main(String[] args) throws UnknownHostException, IOException,
    //catch (NullPointerException ex){}
    int port=9230;
    String name="clasy";
-   int timeout=10;
+   int timeout=432000;
    boolean t;
    //do{
    //t=checkPort(host,port);
